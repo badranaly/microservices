@@ -1,3 +1,3 @@
-createdb usersdb;
-createdb productsdb;
-createdb shoppingcartdb;
+CREATE DATABASE usersdb;
+CREATE DATABASE productsdb;
+CREATE DATABASE shoppingcartdb;
