@@ -19,7 +19,6 @@ services:
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=pgdev
   api-gateway:
     image: anapsix/alpine-java:8_jdk_unlimited
     ports:
@@ -56,6 +55,7 @@ services:
       - ./products-api:/app
     depends_on:
       - eureka 
+      - postgresdev
     command: './gradlew bootRun'
     environment:
       - GRADLE_USER_HOME=cache
@@ -69,6 +69,7 @@ services:
       - ./shopping-cart-api:/app
     depends_on:
       - eureka 
+      - postgresdev
     command: './gradlew bootRun'
     environment:
       - GRADLE_USER_HOME=cache

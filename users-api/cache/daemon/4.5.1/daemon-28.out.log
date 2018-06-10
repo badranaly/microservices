@@ -156,3 +156,5 @@
 [2m2018-06-10 07:07:07.843[0;39m [32m INFO[0;39m [35m66[0;39m [2m---[0;39m [2m[freshExecutor-0][0;39m [36mcom.netflix.discovery.DiscoveryClient   [0;39m [2m:[0;39m Getting all instance registry info from the eureka server
 [2m2018-06-10 07:07:08.457[0;39m [32m INFO[0;39m [35m66[0;39m [2m---[0;39m [2m[freshExecutor-0][0;39m [36mcom.netflix.discovery.DiscoveryClient   [0;39m [2m:[0;39m The response status is 200
 [2m2018-06-10 07:11:32.243[0;39m [32m INFO[0;39m [35m66[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+[2m2018-06-10 07:16:32.255[0;39m [32m INFO[0;39m [35m66[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+[2m2018-06-10 07:21:32.272[0;39m [32m INFO[0;39m [35m66[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
