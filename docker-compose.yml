@@ -14,6 +14,8 @@ services:
       - SPRING_PROFILES_ACTIVE=dev
   postgresdev:
     image: postgres
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
     environment:
