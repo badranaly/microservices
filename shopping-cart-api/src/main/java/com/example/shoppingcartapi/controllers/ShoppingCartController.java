@@ -25,22 +25,22 @@ public class ShoppingCartController {
         return shoppingCartRepository.findAll();
     }
 
-    @GetMapping("/{userId}")
-    public ShoppingCart findShoppingCartById(@PathVariable Long userId) throws NotFoundException {
+    @GetMapping("/{cartId}")
+    public ShoppingCart findShoppingCartById(@PathVariable Long cartId) throws NotFoundException {
 
-        ShoppingCart foundShoppingCart = shoppingCartRepository.findOne(userId);
+        ShoppingCart foundShoppingCart = shoppingCartRepository.findOne(cartId);
 
         if (foundShoppingCart == null) {
-            throw new NotFoundException("ShoppingCart with ID of " + userId + " was not found!");
+            throw new NotFoundException("ShoppingCart with ID of " + cartId + " was not found!");
         }
 
 
         return foundShoppingCart;
     }
 
-    @DeleteMapping("/{userId}")
-    public HttpStatus deleteShoppingCartById(@PathVariable Long userId) throws EmptyResultDataAccessException {
-        shoppingCartRepository.delete(userId);
+    @DeleteMapping("/{cartId}")
+    public HttpStatus deleteShoppingCartById(@PathVariable Long cartId) throws EmptyResultDataAccessException {
+        shoppingCartRepository.delete(cartId);
         return HttpStatus.OK;
     }
 
@@ -49,18 +49,18 @@ public class ShoppingCartController {
         return shoppingCartRepository.save(newShoppingCart);
     }
 
-    @PatchMapping("/{userId}")
-    public ShoppingCart updateShoppingCartById(@PathVariable Long userId, @RequestBody ShoppingCart userRequest) throws NotFoundException {
-        ShoppingCart userFromDb = shoppingCartRepository.findOne(userId);
+    @PatchMapping("/{cartId}")
+    public ShoppingCart updateShoppingCartById(@PathVariable Long cartId, @RequestBody ShoppingCart cartRequest) throws NotFoundException {
+        ShoppingCart cartFromDb = shoppingCartRepository.findOne(cartId);
 
-        if (userFromDb == null) {
-            throw new NotFoundException("ShoppingCart with ID of " + userId + " was not found!");
+        if (cartFromDb == null) {
+            throw new NotFoundException("ShoppingCart with ID of " + cartId + " was not found!");
         }
 
-        userFromDb.setProduct_id(userRequest.getProduct_id());
-        userFromDb.setUser_id(userRequest.getUser_id());
+        cartFromDb.setProduct_id(cartRequest.getProduct_id());
+        cartFromDb.setUser_id(cartRequest.getUser_id());
 
-        return shoppingCartRepository.save(userFromDb);
+        return shoppingCartRepository.save(cartFromDb);
     }
 
     @ExceptionHandler

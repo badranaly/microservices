@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Builder
-@Table(name = "USERS")
+@Table(name = "SHOPPINGCART")
 public class ShoppingCart {
 
     @Id
