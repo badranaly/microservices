@@ -32,10 +32,10 @@ public class Product {
     private String productCategory;
 
     @Column(name = "USER_SELLING_ID")
-    private String userSellingId;
+    private int userSellingId;
 
     @Column(name = "USER_BOUGHT_ID")
-    private String userBoughtId;
+    private int userBoughtId;
 
     public Product(String productName, int productPrice, String productDescription, String productCategory, int userSellingId, int userBoughtId) {
         this.productName = productName;
