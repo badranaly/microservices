@@ -11,11 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ShoppingCartApplication {
 
-	@RequestMapping("/")
-	public String home(){
-		return "Shopping cart is working";
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(ShoppingCartApplication.class, args);
 	}
