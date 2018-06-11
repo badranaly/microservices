@@ -8,13 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableEurekaClient
-@RestController
 public class UsersApiApplication {
-
-	@RequestMapping("/")
-	public String home(){
-		return "Some users";
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(UsersApiApplication.class, args);
