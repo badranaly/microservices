@@ -60,6 +60,8 @@ public class ProductsController {
         productFromDb.setProductDescription(productRequest.getProductDescription());
         productFromDb.setProductCategory(productRequest.getProductCategory());
         productFromDb.setProductPrice((productRequest.getProductPrice()));
+        productFromDb.setUserSellingId((productRequest.getUserSellingId()));
+        productFromDb.setUserBoughtId((productRequest.getUserBoughtId()));
 
         return productRepository.save(productFromDb);
     }

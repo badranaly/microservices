@@ -31,10 +31,18 @@ public class Product {
     @Column(name = "PRODUCT_CATEGORY")
     private String productCategory;
 
-    public Product(String productName, int productPrice, String productDescription, String productCategory) {
+    @Column(name = "USER_SELLING_ID")
+    private String userSellingId;
+
+    @Column(name = "USER_BOUGHT_ID")
+    private String userBoughtId;
+
+    public Product(String productName, int productPrice, String productDescription, String productCategory, int userSellingId, int userBoughtId) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productCategory = productCategory;
         this.productPrice = productPrice;
+        this.userBoughtId = userBoughtId;
+        this.userSellingId = userSellingId;
     }
 }
