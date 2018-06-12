@@ -12,6 +12,7 @@ import com.example.productsapi.models.Product;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Path;
 import java.io.IOException;
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -39,9 +40,9 @@ public class ProductsController {
     }
 
     @GetMapping("/{category}")
-    public Product findAllProductsByCategory(@PathVariable String category) throws NotFoundException {
+    public Iterable<Product> findAllProductsByCategory(@PathVariable String category) throws NotFoundException {
 
-        Product foundCategoryProducts = productRepository.findAllByCategory();
+        List<Product> foundCategoryProducts = productRepository.findAllByCategory(category);
 
         if(foundCategoryProducts == null){
             throw new NotFoundException("Product with category name was not found");
