@@ -46,19 +46,6 @@ public class ProductsController {
         return productRepository.findByProductCategory(categoryName);
     }
 
-//    @GetMapping("/{category}")
-//    public Iterable<Product> findAllProductsByCategory(@PathVariable String category) throws NotFoundException {
-//
-//        List<Product> foundCategoryProducts = productRepository.findAllByCategory(category);
-//
-//        if(foundCategoryProducts == null){
-//            throw new NotFoundException("Product with category name was not found");
-//        }
-//
-//        return foundCategoryProducts;
-//
-//    }
-
 
     @DeleteMapping("/{productId}")
     public HttpStatus deleteProductById(@PathVariable Long productId) throws EmptyResultDataAccessException {
