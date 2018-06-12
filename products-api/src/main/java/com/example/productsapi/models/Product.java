@@ -1,6 +1,7 @@
 package com.example.productsapi.models;
 
 import lombok.*;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 

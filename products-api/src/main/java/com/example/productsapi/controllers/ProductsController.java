@@ -9,10 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.example.productsapi.models.Product;
 
+import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Path;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -39,18 +41,23 @@ public class ProductsController {
         return foundProduct;
     }
 
-    @GetMapping("/{category}")
-    public Iterable<Product> findAllProductsByCategory(@PathVariable String category) throws NotFoundException {
-
-        List<Product> foundCategoryProducts = productRepository.findAllByCategory(category);
-
-        if(foundCategoryProducts == null){
-            throw new NotFoundException("Product with category name was not found");
-        }
-
-        return foundCategoryProducts;
-
+    @GetMapping("/categories/{categoryName}")
+    public Iterable<Product> findAllProductsByCategory(@PathVariable String categoryName){
+        return productRepository.findByProductCategory(categoryName);
     }
+
+//    @GetMapping("/{category}")
+//    public Iterable<Product> findAllProductsByCategory(@PathVariable String category) throws NotFoundException {
+//
+//        List<Product> foundCategoryProducts = productRepository.findAllByCategory(category);
+//
+//        if(foundCategoryProducts == null){
+//            throw new NotFoundException("Product with category name was not found");
+//        }
+//
+//        return foundCategoryProducts;
+//
+//    }
 
 
     @DeleteMapping("/{productId}")
