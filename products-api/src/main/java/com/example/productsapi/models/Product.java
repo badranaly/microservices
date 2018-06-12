@@ -32,18 +32,22 @@ public class Product {
     @Column(name = "PRODUCT_CATEGORY")
     private String productCategory;
 
+    @Column(name = "PRODUCT_IMAGE")
+    private String productImage;
+
     @Column(name = "USER_SELLING_ID")
     private int userSellingId;
 
     @Column(name = "USER_BOUGHT_ID")
     private int userBoughtId;
 
-    public Product(String productName, int productPrice, String productDescription, String productCategory, int userSellingId, int userBoughtId) {
+    public Product(String productName, int productPrice, String productDescription, String productCategory, String productImage, int userSellingId, int userBoughtId) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productCategory = productCategory;
         this.productPrice = productPrice;
         this.userBoughtId = userBoughtId;
         this.userSellingId = userSellingId;
+        this.productImage = productImage;
     }
 }
