@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.productsapi.models.Product;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.Path;
 import java.io.IOException;
 
 @CrossOrigin
@@ -36,6 +37,20 @@ public class ProductsController {
 
         return foundProduct;
     }
+
+    @GetMapping("/{category}")
+    public Product findAllProductsByCategory(@PathVariable String category) throws NotFoundException {
+
+        Product foundCategoryProducts = productRepository.findAllByCategory();
+
+        if(foundCategoryProducts == null){
+            throw new NotFoundException("Product with category name was not found");
+        }
+
+        return foundCategoryProducts;
+
+    }
+
 
     @DeleteMapping("/{productId}")
     public HttpStatus deleteProductById(@PathVariable Long productId) throws EmptyResultDataAccessException {
