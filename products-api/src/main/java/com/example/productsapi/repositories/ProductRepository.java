@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    @Query("SELECT c FROM PRODUCTS c WHERE PRODUCT_CATEGORY = :category")
+    @Query("SELECT c FROM Product c WHERE PRODUCT_CATEGORY = :category")
     List<Product> findAllByCategory(@Param("category") String category);
 }
 
