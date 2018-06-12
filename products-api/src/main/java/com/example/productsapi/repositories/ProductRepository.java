@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    @Query("SELECT * FROM PRODUCTS WHERE PRODUCT_CATEGORY = {category}")
+    @Query("SELECT * FROM PRODUCTS WHERE PRODUCT_CATEGORY = ${category}")
     Product findAllByCategory();
 }
 
