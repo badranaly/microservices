@@ -48,7 +48,7 @@ public class ProductsController {
 
     @GetMapping("/myproducts/{userSellingId}")
     public Iterable<Product> findAllProductsByUserSellingId(@PathVariable Long userSellingId){
-        System.out.println("user selling id recorded below")
+        System.out.println("user selling id recorded below");
         System.out.println(userSellingId);
         return productRepository.findByProductUserSellingId(userSellingId);
     }
