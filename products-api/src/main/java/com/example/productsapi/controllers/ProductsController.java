@@ -46,6 +46,11 @@ public class ProductsController {
         return productRepository.findByProductCategory(categoryName);
     }
 
+    @GetMapping("/products/myproducts/{userSellingId}")
+    public Iterable<Product> findAllProductsByUserSellingId(@PathVariable Long userSellingId){
+        return productRepository.findByProductUserSellingId(userSellingId);
+    }
+
 
     @DeleteMapping("/{productId}")
     public HttpStatus deleteProductById(@PathVariable Long productId) throws EmptyResultDataAccessException {
@@ -55,6 +60,7 @@ public class ProductsController {
 
     @PostMapping("/")
     public Product createNewProduct(@RequestBody Product newProduct) {
+
         return productRepository.save(newProduct);
     }
 
