@@ -36,12 +36,12 @@ public class Product {
     private String productImage;
 
     @Column(name = "USER_SELLING_ID")
-    private int userSellingId;
+    private Integer userSellingId;
 
     @Column(name = "USER_BOUGHT_ID")
     private int userBoughtId;
 
-    public Product(String productName, int productPrice, String productDescription, String productCategory, String productImage, int userSellingId, int userBoughtId) {
+    public Product(String productName, int productPrice, String productDescription, String productCategory, String productImage, Integer userSellingId, int userBoughtId) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.productCategory = productCategory;

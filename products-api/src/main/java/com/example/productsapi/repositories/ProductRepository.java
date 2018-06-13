@@ -16,7 +16,9 @@ import java.util.List;
 @EnableEurekaClient
 @RestController
 public interface ProductRepository extends CrudRepository<Product, Long> {
+
     List<Product> findByProductCategory(String categoryName);
-    List<Product> findByUserSellingId(int userSellingId);
+
+    List<Product> findByUserSellingId(Integer userSellingId);
 }
 
