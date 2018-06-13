@@ -17,6 +17,6 @@ import java.util.List;
 @RestController
 public interface ProductRepository extends CrudRepository<Product, Long> {
     List<Product> findByProductCategory(String categoryName);
-    List<Product> findByProductUserSellingId(Long userSellingId);
+    List<Product> findByUserSellingId(Long userSellingId);
 }
 
