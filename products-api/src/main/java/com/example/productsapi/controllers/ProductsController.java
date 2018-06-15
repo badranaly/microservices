@@ -80,6 +80,7 @@ public class ProductsController {
         productFromDb.setProductPrice((productRequest.getProductPrice()));
         productFromDb.setUserSellingId((productRequest.getUserSellingId()));
         productFromDb.setUserBoughtId((productRequest.getUserBoughtId()));
+        productFromDb.setProductImage((productRequest.getProductImage()));
 
         return productRepository.save(productFromDb);
     }
